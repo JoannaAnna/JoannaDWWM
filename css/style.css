@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ropa Sans', sans-serif;
+    color: #905C4C !important;
+    padding-top: 60px;  /* hauteur d'un header fixe */
+    background-image: url('../images/background.jpg') !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* page entière*/
+}
+
+a {
+    text-decoration: none;
+    color: inherit;  /* prend la couleur du texte sur la page */
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h5{
+    font-family: 'Westgate', sans-serif;
+    letter-spacing: 1px;
+}
+
+.btn {
+    background-color: #D8BCB6 !important;
+    color: #905C4C !important;
+    font-family: 'Westgate', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* --- Header --- */
+
+.header {
+    background-color: #D8BCB6;
+    font-family: 'Westgate', sans-serif;
+    font-size: larger;
+    letter-spacing: 2px;
+    font-weight: 900;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index:99;  /* pour empêcher les cartes de masquer le header lors du défilement */
+}
+
+.nav {
+    transition: all 0.3s ease-in; /*- pour le menu hamburger */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;  /* horizontal */
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.navlist {
+    display: flex;
+    column-gap: 30px;
+}
+
+.navlink {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.5s;
+    border-right: 1px solid;
+    border-color: #905C4C;
+    color: #905C4C !important;
+}
+
+.navlink:hover,
+.navlink:focus {
+    background-color: #905C4C;
+    color: #D8BCB6 !important;
+    padding: 5px 5px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.logoimg {
+    height: 60px;
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #D8BCB6;
+}
+
+.faicon {
+    height: 25px;
+    width: 25px;
+    color: #905C4C;
+    margin: 5px 0;
+}
+
+.navopen {
+    right: 0 !important;
+}
+
+/* --- Footer --- */
+
+.footer {
+    margin-top: auto;
+    text-align: center;
+    background: #D8BCB6;
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    color: rgb(144, 92, 76) !important;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'westgate', sans-serif;
+}
+
+.footer i {
+    font-size: 30px;
+}
+
+.fa-github {
+    color: black !important;
+}
+
+.fa-linkedin {
+    color: rgb(0, 119, 181);
+}
+    
+.fa-envelope {
+    color: rgb(199, 22, 16);
+}
+
+.mentions a:hover {
+    background: rgb(144, 92, 76);
+    color: rgb(216, 188, 182) !important;
+    transition: 0.5s;
+}
+
+.footer p {
+    font-family: "courier-std", monospace;
+}
+
+body > footer {
+    position: sticky;
+    top: 100vh;
+}
+
+/* --- Accueil --- */
+
+.main {
+    font-size: 20px;
+    width: 80%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.downloadbtn {
+    background-color: #905C4C !important;
+    color: #D8BCB6 !important;
+    font-family: 'Westgate', sans-serif;
+    font-size: larger;
+    font-weight: 600;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.accueil {
+    background: rgb(255, 255, 255, 0.7) !important;
+}
+
+.tabtitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.tabtitle .tabBtn {
+    background-color: #D8BCB6;
+    color: #905C4C;
+    font-family: 'Westgate', sans-serif;
+    font-size: larger;
+    font-weight: 600;
+    border: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.tabtitle .tabBtn:hover {
+    color: #D8BCB6;
+    background-color: #905C4C;
+    transition: 0.5s;
+}
+
+.tabtitle .tabBtn.active {
+    color: #D8BCB6;
+    background-color: #905C4C;
+}
+
+.boxContent {
+    padding: 20px;
+}
+
+.boxContent .content {
+    display: none;
+}
+
+.boxContent .content.active {
+    display: block;
+}
+
+/* --- A propos --- */
+
+.tabtitle {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Westgate', sans-serif;
+    font-size: larger;
+    font-weight: 900;
+}
+
+.tablinks {
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(144, 92, 76, 0.3);
+    color: #905C4C !important;
+    border-bottom: 2px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.tablinks::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: rgb(144, 92, 76);
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+    position: absolute;
+}
+
+.tablinks.active-link::after {
+    width: 120px;
+}
+
+.tabcontents ul li {
+    list-style: none;
+}
+
+.tabcontents {
+    display: none;
+}
+
+.tabcontents.active-content {
+    display: block;
+    background: rgb(216, 188, 182, 0.3);
+    color: rgb(144, 92, 76) !important;
+}
+
+.icons {
+    text-align: center;
+    font-size: 50px;
+}
+
+/* --- Mes services --- */
+
+.card-img-top {
+    height: 250px;
+}
+
+/* --- Portfolio --- */
+
+.cItem {
+    height: 600px;
+}
+
+.cImg {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.pCarousel {
+    text-align: center;
+}
+
+/* ---------- CONTACT -------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+}
+
+form input, form textarea, form select {
+    margin: 10px 0;
+    padding: 5px;
+    border: 0;
+    outline: none;
+    background: #D8BCB6;
+    color: rgb(144, 92, 76) !important;
+}
+
+form button {
+    width: 100%;
+    border: 3px;
+    border-color: rgb(144, 92, 76) !important;
+}
+
+/* ---------- API -------- */
+
+.app-title {
+    text-align: center;
+}
+
+.input {
+    padding: 5px;
+    border: 1px;
+    border-color: rgb(144, 92, 76) !important;
+    width: 40px;
+    outline: none;
+    background: white;
+    color: rgb(144, 92, 76) !important;
+}
+.paraGen {
+    text-align: justify;
+}
+
+br {
+    content: "";
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* --- MEDIA QUERIES --- 
+The Bootstrap grid system has four classes:
+Extra small < 576px
+Small ≥ 576px	
+Medium ≥ 768px	
+Large ≥ 992px	
+Extra large ≥ 1200px */
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 0;
+        row-gap: 10px;
+    }
+    .navlist {
+        column-gap: 20px;
+    }
+
+    body {
+        padding-top: 120px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 95%;
+    }
+    
+    .tabtitle {
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px) {
+    
+    .nav { /*position below the logo */
+        position: fixed;
+        top: 60px;
+        right: -200px;
+        background: #D8BCB6;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .navlist {
+        flex-direction: column; /* vertical list menu*/
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .navlink {
+        border: none;
+        padding: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
